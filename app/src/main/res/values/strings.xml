@@ -13,4 +13,8 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="successful_login">Login success</string>
+    <string name="unsuccessful_login">Login failed</string>
+    <string name="user_name">jdoe</string>
+    <string name="password">welcome1</string>
 </resources>
