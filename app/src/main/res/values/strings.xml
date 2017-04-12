@@ -17,4 +17,7 @@
     <string name="unsuccessful_login">Login failed</string>
     <string name="user_name">jdoe</string>
     <string name="password">welcome1</string>
+    <string name="title_client_list">Clients</string>
+    <string name="title_client_detail">Client Detail</string>
+    <string name="title_activity_add_new_session">AddNewSession</string>
 </resources>
