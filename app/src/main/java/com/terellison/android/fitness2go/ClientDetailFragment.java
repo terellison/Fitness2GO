@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.terellison.android.fitness2go.dummy.DummyContent;
 
 /**
- * A fragment representing a single Client detail screen.
+ * A fragment representing a single com.terellison.android.fitness2go.Client detail screen.
  * This fragment is either contained in a {@link ClientListActivity}
  * in two-pane mode (on tablets) or a {@link ClientDetailActivity}
  * on handsets.

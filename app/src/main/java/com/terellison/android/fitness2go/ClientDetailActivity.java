@@ -11,7 +11,7 @@ import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
 
 /**
- * An activity representing a single Client detail screen. This
+ * An activity representing a single com.terellison.android.fitness2go.Client detail screen. This
  * activity is only used narrow width devices. On tablet-size devices,
  * item details are presented side-by-side with a list of items
  * in a {@link ClientListActivity}.
