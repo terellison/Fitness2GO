@@ -7,6 +7,7 @@
     android:padding="20dp">
 
     <ImageView
+        android:id="@+id/client_photo"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="#FF0000"/>
@@ -58,5 +59,8 @@
             android:layout_height="wrap_content"
             android:text="Client DOB here"/>
     </LinearLayout>
-
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/client_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
