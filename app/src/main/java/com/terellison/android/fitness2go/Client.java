@@ -1,5 +1,7 @@
 package com.terellison.android.fitness2go;
 
+import java.util.UUID;
+
 /**
  * Created by Magnuson Hotel on 4/19/2017.
  */
@@ -9,12 +11,18 @@ public class Client {
     private String mClientName;
     private String mClientPhn;
     private String mClientAddress;
+    private UUID mId;
+    private String mClientDOB;
 
-
-    public void Client(String mClientName, String mClientPhn, String mClientAddress) {
+    public void Client() {
+        mId = UUID.randomUUID();
+    }
+    public void Client(String mClientName, String mClientPhn, String mClientAddress, String mClientDOB) {
             mClientName = this.mClientName;
             mClientPhn = this.mClientPhn;
             mClientAddress = this.mClientAddress;
+            mClientDOB = this.mClientDOB;
+            mId = UUID.randomUUID();
         }
 
     public void setClientPhn(String clientPhn) {
@@ -39,5 +47,17 @@ public class Client {
 
     public void setClientName(String clientName) {
         mClientName = clientName;
+    }
+
+    public String getmClientDOB() {
+        return mClientDOB;
+    }
+
+    public void setmClientDOB(String mClientDOB) {
+        this.mClientDOB = mClientDOB;
+    }
+
+    public UUID getUUID() {
+        return mId;
     }
 }
