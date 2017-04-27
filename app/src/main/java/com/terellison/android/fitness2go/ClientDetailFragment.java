@@ -35,4 +35,6 @@ public class ClientDetailFragment extends Fragment {
 
         return v;
     }
+
+
 }
