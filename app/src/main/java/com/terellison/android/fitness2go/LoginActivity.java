@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mSkipLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, ClientDetailFragment.class);
+                Intent i = new Intent(LoginActivity.this, ClientDetailActivity.class);
                 startActivity(i);
             }
         });
