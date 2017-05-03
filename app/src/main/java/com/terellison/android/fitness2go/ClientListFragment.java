@@ -1,5 +1,6 @@
 package com.terellison.android.fitness2go;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,7 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -41,13 +44,40 @@ public class ClientListFragment extends Fragment {
         mClientRecyclerView.setAdapter(mAdapter);
     }
 
-    public class ClientHolder extends RecyclerView.ViewHolder {
+    public class ClientHolder extends RecyclerView.ViewHolder
+            implements View.OnClickListener{
+        private Client mClient;
         public TextView mClientNameTextView;
+        public TextView mClientPhnTextView;
+        public TextView mClientDOBTextView;
+        public ImageView mClientPhotoImageView;
 
         public ClientHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
 
-            mClientNameTextView = (TextView) itemView;
+            mClientNameTextView = (TextView)
+                    itemView.findViewById(R.id.list_client_name);
+            mClientPhnTextView = (TextView)
+                    itemView.findViewById(R.id.list_client_phn);
+            mClientDOBTextView = (TextView)
+                    itemView.findViewById(R.id.list_client_dob);
+            mClientPhotoImageView = (ImageView)
+                    itemView.findViewById(R.id.list_client_photo);
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = ClientDetailActivity.newIntent(getActivity(), mClient.getUUID());
+            startActivity(intent);
+        }
+
+        public void bindClient(Client client) {
+            mClient = client;
+            mClientNameTextView.setText(mClient.getClientName());
+            mClientPhnTextView.setText(mClient.getClientPhn());
+            mClientDOBTextView.setText(mClient.getClientDOB());
         }
 
     }
@@ -65,14 +95,14 @@ public class ClientListFragment extends Fragment {
         public ClientHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             View view = layoutInflater
-                    .inflate(android.R.layout.simple_list_item_1, parent, false);
+                    .inflate(R.layout.list_item_client, parent, false);
             return new ClientHolder(view);
         }
 
         @Override
         public void onBindViewHolder(ClientHolder holder, int position) {
             Client client = mClients.get(position);
-            holder.mClientNameTextView.setText(client.getClientName());
+            holder.bindClient(client);
         }
 
         @Override

@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.UUID;
+
 public class ClientDetailFragment extends Fragment {
     private Client mClient;
     private TextView mClientName;
@@ -17,7 +19,9 @@ public class ClientDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mClient = new Client();
+        UUID clientId = (UUID) getActivity().getIntent()
+                .getSerializableExtra(ClientDetailActivity.EXTRA_CLIENT_ID);
+        mClient = ClientSingleton.get(getActivity()).getClient(clientId);
     }
 
     @Override
@@ -25,13 +29,13 @@ public class ClientDetailFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_client_detail, container, false);
 
         mClientName = (TextView)v.findViewById(R.id.client_name);
-        mClientName.setText("John Doe");
+        mClientName.setText(mClient.getClientName());
 
         mClientPhn = (TextView)v.findViewById(R.id.client_phn);
-        mClientPhn.setText("727-555-5555");
+        mClientPhn.setText(mClient.getClientPhn());
 
         mClientDOB = (TextView)v.findViewById(R.id.client_dob);
-        mClientDOB.setText("10/14/1996");
+        mClientDOB.setText(mClient.getClientDOB());
 
         return v;
     }
