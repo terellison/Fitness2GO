@@ -54,17 +54,16 @@ public class ClientListFragment extends Fragment {
 
         public ClientHolder(View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
+            //itemView.setOnClickListener(this);
 
             mClientNameTextView = (TextView)
                     itemView.findViewById(R.id.list_client_name);
+            /*
             mClientPhnTextView = (TextView)
                     itemView.findViewById(R.id.list_client_phn);
             mClientDOBTextView = (TextView)
                     itemView.findViewById(R.id.list_client_dob);
-            mClientPhotoImageView = (ImageView)
-                    itemView.findViewById(R.id.list_client_photo);
-
+            */
         }
 
         @Override
@@ -76,8 +75,8 @@ public class ClientListFragment extends Fragment {
         public void bindClient(Client client) {
             mClient = client;
             mClientNameTextView.setText(mClient.getClientName());
-            mClientPhnTextView.setText(mClient.getClientPhn());
-            mClientDOBTextView.setText(mClient.getClientDOB());
+            //mClientPhnTextView.setText(mClient.getClientPhn());
+            //mClientDOBTextView.setText(mClient.getClientDOB());
         }
 
     }
@@ -102,7 +101,8 @@ public class ClientListFragment extends Fragment {
         @Override
         public void onBindViewHolder(ClientHolder holder, int position) {
             Client client = mClients.get(position);
-            holder.bindClient(client);
+            //holder.bindClient(client);
+            holder.mClientNameTextView.setText(client.getClientName());
         }
 
         @Override

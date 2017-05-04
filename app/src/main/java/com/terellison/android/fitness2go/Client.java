@@ -23,7 +23,7 @@ public class Client {
 
 
 
-    public void Client(String mClientName, String mClientPhn, String mClientAddress, String mClientDOB, ImageView mClientPhoto) {
+    public void Client(String mClientName, String mClientPhn, String mClientDOB) {
             mClientName = this.mClientName;
             mClientPhn = this.mClientPhn;
             mClientAddress = this.mClientAddress;

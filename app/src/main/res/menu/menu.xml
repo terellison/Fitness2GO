@@ -6,6 +6,10 @@
         android:title="Client List" />
 
     <item
+        android:id="@+id/item_add_client"
+        android:title="Add Client" />
+
+    <item
         android:id="@+id/LogOut"
         android:title="@string/logout_text" />
 

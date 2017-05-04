@@ -45,4 +45,13 @@ public class ClientSingleton {
         }
         return null;
     }
+
+    public void AddClient(String mClientName, String mClientPhn, String mClientDOB){
+        Client client = new Client();
+        client.setClientName(mClientName);
+        client.setClientPhn(mClientPhn);
+        client.setClientDOB(mClientDOB);
+        mClients.add(client);
+
+    }
 }

@@ -4,23 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/list_client_photo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="#F00000" />
-
     <TextView
         android:id="@+id/list_client_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/list_client_photo"
+        android:padding="4dp"
         tools:text="name"/>
+    <!--
     <TextView
         android:id="@+id/list_client_dob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/list_client_photo"
         android:layout_below="@id/list_client_name"
         tools:text="DOB"/>
 
@@ -28,8 +22,7 @@
         android:id="@+id/list_client_phn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/list_client_photo"
         android:layout_below="@id/list_client_dob"
         tools:text="Phone Number"/>
-
+    -->
 </RelativeLayout>
