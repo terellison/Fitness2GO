@@ -10,7 +10,7 @@
         android:title="Add Client" />
 
     <item
-        android:id="@+id/LogOut"
+        android:id="@+id/item_log_out"
         android:title="@string/logout_text" />
 
 </menu>

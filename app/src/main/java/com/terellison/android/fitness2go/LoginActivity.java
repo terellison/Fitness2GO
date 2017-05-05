@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mSkipLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, ClientDetailActivity.class);
+                Intent i = new Intent(LoginActivity.this, ClientListActivity.class);
                 startActivity(i);
             }
         });
@@ -150,10 +150,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.LogOut) {
+        if (id == R.id.item_log_out) {
             super.onOptionsItemSelected(item);
-            Toast.makeText(this,R.string.logout_text, Toast.LENGTH_SHORT);
-
+            Toast.makeText(this,R.string.logout_text, Toast.LENGTH_SHORT)
+            .show();
+        }
+        if (id == R.id.item_add_client) {
+            Intent i = new Intent(this, AddClientActivity.class);
+            startActivity(i);
         }
         return true;
     }

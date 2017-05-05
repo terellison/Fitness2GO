@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/view_camera_and_name" />
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <TextView
+            android:id="@+id/name_static"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name:"
@@ -20,8 +25,14 @@
             android:id="@+id/add_client_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/name_static"
             tools:hint="Name"/>
+        </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,10 +42,14 @@
             android:id="@+id/add_client_phn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/add_client_name"
-            android:layout_below="@id/add_client_name"
             tools:hint="Phn"
             />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,13 +60,13 @@
             android:id="@+id/add_client_dob"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/add_client_name"
             tools:hint="DOB"/>
-        <Button
-            android:id="@+id/add_client_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_client_button"/>
         </LinearLayout>
+
+    <Button
+        android:id="@+id/add_client_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_client_button"/>
 
 </LinearLayout>

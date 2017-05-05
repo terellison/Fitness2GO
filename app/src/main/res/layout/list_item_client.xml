@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:padding="4dp"
         tools:text="name"/>
-    <!--
+
     <TextView
         android:id="@+id/list_client_dob"
         android:layout_width="wrap_content"
@@ -24,5 +24,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/list_client_dob"
         tools:text="Phone Number"/>
-    -->
+
 </RelativeLayout>

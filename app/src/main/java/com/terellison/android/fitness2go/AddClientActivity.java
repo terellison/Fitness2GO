@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class AddClientActivity extends AppCompatActivity {
 
@@ -12,6 +14,8 @@ public class AddClientActivity extends AppCompatActivity {
     private EditText mAddClientName;
     private EditText mAddClientPhn;
     private EditText mAddClientDOB;
+    private ImageButton mPhotoButton;
+    private ImageView mPhotoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +25,6 @@ public class AddClientActivity extends AppCompatActivity {
         mAddClientName = (EditText)findViewById(R.id.add_client_name);
         mAddClientPhn = (EditText)findViewById(R.id.add_client_phn);
         mAddClientDOB = (EditText)findViewById(R.id.add_client_dob);
-
-
 
         final ClientSingleton clientSingleton = ClientSingleton.get(AddClientActivity.this);
 
@@ -36,5 +38,7 @@ public class AddClientActivity extends AppCompatActivity {
                         mAddClientDOB.getText().toString());
             }
         });
+        mPhotoButton = (ImageButton)findViewById(R.id.client_camera);
+        mPhotoView = (ImageView)findViewById(R.id.client_photo);
     }
 }

@@ -6,6 +6,9 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -109,5 +112,26 @@ public class ClientListFragment extends Fragment {
         public int getItemCount() {
             return mClients.size();
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu, menu);
+        super.onCreateOptionsMenu(menu,inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.item_add_client) {
+            Intent i = new Intent(getActivity(), AddClientActivity.class);
+            startActivity(i);
+        }
+        if (id == R.id.item_log_out) {
+            Toast.makeText(getActivity(), R.string.logout_text, Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getActivity(), LoginActivity.class);
+            startActivity(i);
+        }
+        return true;
     }
 }

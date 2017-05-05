@@ -60,6 +60,11 @@ public class ClientDetailFragment extends Fragment {
             Intent i = new Intent(getActivity(), AddClientActivity.class);
             startActivity(i);
         }
+        if (id == R.id.item_log_out) {
+            Toast.makeText(getActivity(), R.string.logout_text, Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(getActivity(), LoginActivity.class);
+            startActivity(i);
+        }
     return true;
     }
 
